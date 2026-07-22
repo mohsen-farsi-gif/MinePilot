@@ -1,0 +1,2 @@
+# MinePilot
+Mining Dashboard
