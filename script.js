@@ -1,25 +1,63 @@
+let lastBTC = 118000;
+let lastHash = 58.60;
+
+updateClock();
+setInterval(updateClock,1000);
+
 function updateClock(){
 
-let now=new Date();
+const now=new Date();
 
 document.getElementById("clock").innerHTML=
-"🕒 "+now.toLocaleTimeString();
+"Last Update : "+now.toLocaleTimeString();
 
 }
 
-setInterval(updateClock,1000);
-
-updateClock();
-
 function refreshData(){
 
-let btc=Math.floor(Math.random()*10000)+110000;
-
+let btc=Math.floor(Math.random()*6000)+115000;
 let hash=(Math.random()*3+57).toFixed(2);
 
-document.getElementById("btcPrice").innerHTML=btc+" $";
+let btcPercent=((btc-lastBTC)/lastBTC*100).toFixed(2);
+let hashPercent=((hash-lastHash)/lastHash*100).toFixed(2);
 
-document.getElementById("hashPrice").innerHTML=hash+" $";
+const btcPrice=document.getElementById("btcPrice");
+const btcChange=document.getElementById("btcChange");
+
+const hashPrice=document.getElementById("hashPrice");
+const hashChange=document.getElementById("hashChange");
+
+btcPrice.innerHTML=btc+" $";
+hashPrice.innerHTML=hash+" $";
+
+if(btc>=lastBTC){
+
+btcChange.innerHTML="▲ +"+btcPercent+"%";
+btcChange.className="change positive";
+
+}else{
+
+btcChange.innerHTML="▼ "+btcPercent+"%";
+btcChange.className="change negative";
+
+}
+
+if(hash>=lastHash){
+
+hashChange.innerHTML="▲ +"+hashPercent+"%";
+hashChange.className="change positive";
+
+}else{
+
+hashChange.innerHTML="▼ "+hashPercent+"%";
+hashChange.className="change negative";
+
+}
+
+lastBTC=btc;
+lastHash=parseFloat(hash);
+
+updateClock();
 
 }
 
