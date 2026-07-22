@@ -1,13 +1,9 @@
 <!DOCTYPE html>
-<html lang="fa">
-
+<html lang="en">
 <head>
-
 <meta charset="UTF-8">
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<title>Mining Dashboard</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MinePilot</title>
 
 <link rel="stylesheet" href="style.css">
 
@@ -15,76 +11,86 @@
 
 <body>
 
+<div class="container">
+
+<div class="header">
+
+<h1>🚀 MinePilot</h1>
+
+<div id="status" class="online">
+🟢 Connected
+</div>
+
 <div id="clock"></div>
+
+</div>
+
+<div id="cards">
 
 <div class="card">
 
-<div class="title">
-🚀 Mining Dashboard
+<div class="label">
+Bitcoin
 </div>
 
-<div class="item">
-
-<span>💰 BTC Price</span>
-
-<span id="btcPrice">118000 $</span>
-
+<div id="btcPrice" class="value">
+118000 $
 </div>
 
-<div class="item">
-
-<span>⚡ Hashprice</span>
-
-<span id="hashPrice">58.6 $</span>
+<div id="btcChange" class="change positive">
++0.00%
+</div>
 
 </div>
 
-<div class="item">
+<div class="card">
 
-<span>🌐 Network Hashrate</span>
+<div class="label">
+Hashprice
+</div>
 
-<span>930 EH/s</span>
+<div id="hashPrice" class="value">
+58.60 $
+</div>
+
+<div id="hashChange" class="change positive">
++0.00%
+</div>
 
 </div>
 
-<div class="item">
+<div class="card">
 
-<span>📈 Difficulty</span>
+<div class="label">
+Network Hashrate
+</div>
 
-<span>128 T</span>
+<div class="value">
+930 EH/s
+</div>
 
 </div>
 
-<div class="item">
+<div class="card">
 
-<span>🖥 Farm Status</span>
-
-<span>🟢 Online</span>
-
+<div class="label">
+Difficulty
 </div>
 
-<div class="progress">
-
-<div id="bar"></div>
-
+<div class="value">
+128 T
 </div>
 
-<div id="health">
-
-Farm Health : 96%
+</div>
 
 </div>
 
 <button onclick="refreshData()">
-
-🔄 Refresh
-
+Refresh
 </button>
 
 <button onclick="changeTheme()">
-
-🌙 Dark / Light
-
+Theme
 </button>
 
 </div>
@@ -92,5 +98,4 @@ Farm Health : 96%
 <script src="script.js"></script>
 
 </body>
-
 </html>
