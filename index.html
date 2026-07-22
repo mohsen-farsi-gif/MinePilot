@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Mining Dashboard</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div id="clock"></div>
+
+<div class="card">
+
+<div class="title">
+🚀 Mining Dashboard
+</div>
+
+<div class="item">
+
+<span>💰 BTC Price</span>
+
+<span id="btcPrice">118000 $</span>
+
+</div>
+
+<div class="item">
+
+<span>⚡ Hashprice</span>
+
+<span id="hashPrice">58.6 $</span>
+
+</div>
+
+<div class="item">
+
+<span>🌐 Network Hashrate</span>
+
+<span>930 EH/s</span>
+
+</div>
+
+<div class="item">
+
+<span>📈 Difficulty</span>
+
+<span>128 T</span>
+
+</div>
+
+<div class="item">
+
+<span>🖥 Farm Status</span>
+
+<span>🟢 Online</span>
+
+</div>
+
+<div class="progress">
+
+<div id="bar"></div>
+
+</div>
+
+<div id="health">
+
+Farm Health : 96%
+
+</div>
+
+<button onclick="refreshData()">
+
+🔄 Refresh
+
+</button>
+
+<button onclick="changeTheme()">
+
+🌙 Dark / Light
+
+</button>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
